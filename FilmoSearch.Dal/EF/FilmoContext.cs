@@ -9,14 +9,12 @@ namespace FilmoSearch.Dal.EF
         public DbSet<FilmEntity> Films { get; set; } = null!;
         public DbSet<ReviewEntity> Reviews { get; set; } = null!;
 
-        public FilmoContext(DbContextOptions<FilmoContext> options) : base(options)
-        {
-            Database.EnsureCreated();
-        }
+        public FilmoContext(DbContextOptions<FilmoContext> options) : base(options) { }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ReviewEntity>()
-                .ToTable(t => t.HasCheckConstraint("ValidStars", "Stars > 0 AND Stars < 6"));
+                .ToTable(t => t.HasCheckConstraint("ValidStars", "\"Stars\" > 0 AND \"Stars\" < 6"));
         }
     }
 }
