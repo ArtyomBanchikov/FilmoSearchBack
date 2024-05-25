@@ -9,8 +9,8 @@ namespace FilmoSearch.Dal.DI
     {
         public static void AddDalServices(this IServiceCollection services, IConfiguration configuration)
         {
-            var dbConnection = configuration.GetConnectionString("DbConnection");
-            services.AddDbContext<FilmoContext>(c => c.UseNpgsql(dbConnection));
+            services.AddDbContext<FilmoContext>(c => 
+                c.UseNpgsql(configuration.GetConnectionString("DbConnection")));
         }
     }
 }
