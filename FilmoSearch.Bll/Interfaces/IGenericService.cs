@@ -2,14 +2,14 @@
 {
     public interface IGenericService<TModel> where TModel : class
     {
-        Task<IEnumerable<TModel>> GetAll(CancellationToken ct);
+        Task<IEnumerable<TModel>> GetAllAsync(CancellationToken ct);
 
-        Task<TModel> GetById(int id, CancellationToken ct);
+        Task<TModel> GetByIdAsync(int id, CancellationToken ct);
 
-        Task<TModel> Create(TModel model, CancellationToken ct);
+        Task<TModel> CreateAsync(TModel model, CancellationToken ct);
 
-        Task<TModel> Update(TModel model, CancellationToken ct);
+        Task<TModel> UpdateAsync(TModel model, CancellationToken ct);
 
-        Task Delete(int id, CancellationToken ct);
+        Task DeleteAsync(int id, CancellationToken ct);
     }
 }

@@ -18,39 +18,39 @@ namespace FilmoSearch.Bll.Services
             this.mapper = mapper;
         }
 
-        public async Task<TModel> Create(TModel model, CancellationToken ct)
+        public async Task<TModel> CreateAsync(TModel model, CancellationToken ct)
         {
-            var resultEntity = await repository.Create(mapper.Map<TEntity>(model), ct);
+            var resultEntity = await repository.CreateAsync(mapper.Map<TEntity>(model), ct);
 
             return mapper.Map<TModel>(resultEntity);
         }
 
-        public async Task Delete(int id, CancellationToken ct)
+        public async Task DeleteAsync(int id, CancellationToken ct)
         {
-            var resultEntity = await repository.GetById(id, ct);
+            var resultEntity = await repository.GetByIdAsync(id, ct);
 
-            await repository.Delete(resultEntity, ct);
+            await repository.DeleteAsync(resultEntity, ct);
         }
 
-        public async Task<IEnumerable<TModel>> GetAll(CancellationToken ct)
+        public async Task<IEnumerable<TModel>> GetAllAsync(CancellationToken ct)
         {
-            var result = mapper.Map<IEnumerable<TModel>>(await repository.GetAll(ct));
+            var result = mapper.Map<IEnumerable<TModel>>(await repository.GetAllAsync(ct));
 
             return result;
         }
 
-        public async Task<TModel> GetById(int id, CancellationToken ct)
+        public async Task<TModel> GetByIdAsync(int id, CancellationToken ct)
         {
-            var resultEntity = await repository.GetById(id, ct);
+            var resultEntity = await repository.GetByIdAsync(id, ct);
 
             return mapper.Map<TModel>(resultEntity);
         }
 
-        public async Task<TModel> Update(TModel model, CancellationToken ct)
+        public async Task<TModel> UpdateAsync(TModel model, CancellationToken ct)
         {
             var entity = mapper.Map<TEntity>(model);
 
-            var resultEntity = await repository.Update(entity, ct);
+            var resultEntity = await repository.UpdateAsync(entity, ct);
 
             return mapper.Map<TModel>(resultEntity);
         }

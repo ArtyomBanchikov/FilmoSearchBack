@@ -16,12 +16,12 @@ namespace FilmoSearch.Dal.Repositories
             dbSet = context.Set<TEntity>();
         }
 
-        public virtual async Task<IEnumerable<TEntity>> GetAll(CancellationToken token)
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken token)
         {
             return await dbSet.AsNoTracking().ToListAsync(token);
         }
 
-        public virtual async Task<TEntity> Create(TEntity entity, CancellationToken token)
+        public virtual async Task<TEntity> CreateAsync(TEntity entity, CancellationToken token)
         {
             await dbSet.AddAsync(entity, token);
 
@@ -30,7 +30,7 @@ namespace FilmoSearch.Dal.Repositories
             return entity;
         }
 
-        public virtual async Task<TEntity> Update(TEntity entity, CancellationToken token)
+        public virtual async Task<TEntity> UpdateAsync(TEntity entity, CancellationToken token)
         {
             dbSet.Update(entity);
 
@@ -39,12 +39,12 @@ namespace FilmoSearch.Dal.Repositories
             return entity;
         }
 
-        public virtual async Task<TEntity?> GetById(int id, CancellationToken token)
+        public virtual async Task<TEntity?> GetByIdAsync(int id, CancellationToken token)
         {
             return await dbSet.FindAsync(new object[] { id }, token);
         }
 
-        public virtual async Task Delete(TEntity entity, CancellationToken token)
+        public virtual async Task DeleteAsync(TEntity entity, CancellationToken token)
         {
             dbSet.Remove(entity);
 
