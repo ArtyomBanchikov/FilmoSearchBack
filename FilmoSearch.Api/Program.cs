@@ -11,6 +11,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddBLLServices(builder.Configuration);
 
+builder.Services.AddAutoMapper(typeof(FilmoSearch.Api.Mappers.MappingProfile), typeof(FilmoSearch.Bll.Mappers.MappingProfile));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
