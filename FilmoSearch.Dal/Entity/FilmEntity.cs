@@ -8,5 +8,7 @@ namespace FilmoSearch.Dal.Entity
 
         [Required]
         public string Title { get; set; }
+
+        public IEnumerable<ReviewEntity>? Reviews { get; set; }
     }
 }

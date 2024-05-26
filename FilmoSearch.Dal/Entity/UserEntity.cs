@@ -20,5 +20,7 @@ namespace FilmoSearch.Dal.Entity
 
         [Required]
         public DateOnly RegistrationDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+
+        public IEnumerable<ReviewEntity>? Reviews { get; set; }
     }
 }
