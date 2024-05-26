@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FilmoSearch.Api.Controllers
 {
+    [ApiController]
+    [Route("[Controller]")]
     public class FilmController : GenericController<FilmViewModel, FilmModel>
     {
-        [ApiController]
-        [Route("[Controller]")]
         public FilmController(IGenericService<FilmModel> genericService, IMapper mapper) : base(genericService, mapper)
         {
         }
