@@ -7,7 +7,9 @@ namespace FilmoSearch.Dal.EF
     {
         public DbSet<ActorEntity> Actors { get; set; } = null!;
         public DbSet<FilmEntity> Films { get; set; } = null!;
+        public DbSet<GenreEntity> Genres { get; set; } = null!;
         public DbSet<ReviewEntity> Reviews { get; set; } = null!;
+        public DbSet<UserEntity> Users { get; set; } = null!;
 
         public FilmoContext(DbContextOptions<FilmoContext> options) : base(options) { }
         
