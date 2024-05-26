@@ -1,6 +1,6 @@
 ﻿using FilmoSearch.Dal.EF;
 using FilmoSearch.Dal.Entity;
-using FilmoSearch.Dal.Interfaces
+using FilmoSearch.Dal.Interfaces;
 using FilmoSearch.Dal.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
