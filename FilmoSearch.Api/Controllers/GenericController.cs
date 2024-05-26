@@ -44,7 +44,7 @@ namespace FilmoSearch.Api.Controllers
             await _genericService.DeleteAsync(id, token);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public virtual async Task<TViewModel> UpdateAsync(TViewModel tChangeModel,
             CancellationToken token)
         {
