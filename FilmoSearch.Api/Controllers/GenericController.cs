@@ -6,8 +6,9 @@ namespace FilmoSearch.Api.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
-    public class GenericController<TViewModel, TModel> : Controller
+    public class GenericController<TViewModel, TAddViewModel, TModel> : Controller
         where TViewModel : class
+        where TAddViewModel : class
         where TModel : class
     {
         private readonly IGenericService<TModel> _genericService;
@@ -55,10 +56,10 @@ namespace FilmoSearch.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<TViewModel> CreateAsync(TViewModel tChangeModel,
+        public async Task<TViewModel> CreateAsync(TAddViewModel tCreateModel,
             CancellationToken token)
         {
-            var tModel = _mapper.Map<TModel>(tChangeModel);
+            var tModel = _mapper.Map<TModel>(tCreateModel);
             var result = await _genericService.CreateAsync(tModel, token);
 
             return _mapper.Map<TViewModel>(result);

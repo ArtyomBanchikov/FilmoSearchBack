@@ -1,4 +1,6 @@
-﻿namespace FilmoSearch.Api.ViewModels
+﻿using FilmoSearch.Api.ViewModels.Review;
+
+namespace FilmoSearch.Api.ViewModels.User
 {
     public class UserViewModel
     {

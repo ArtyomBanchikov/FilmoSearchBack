@@ -1,4 +1,6 @@
-﻿namespace FilmoSearch.Api.ViewModels
+﻿using FilmoSearch.Api.ViewModels.Film;
+
+namespace FilmoSearch.Api.ViewModels.Actor
 {
     public class ActorViewModel
     {

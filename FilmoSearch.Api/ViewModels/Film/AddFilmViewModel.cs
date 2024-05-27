@@ -1,9 +1,11 @@
-﻿namespace FilmoSearch.Api.ViewModels
-{
-    public class FilmViewModel
-    {
-        public int Id { get; set; }
+﻿using FilmoSearch.Api.ViewModels.Actor;
+using FilmoSearch.Api.ViewModels.Genre;
+using FilmoSearch.Api.ViewModels.Review;
 
+namespace FilmoSearch.Api.ViewModels.Film
+{
+    public class AddFilmViewModel
+    {
         public string Title { get; set; }
 
         public IEnumerable<ReviewViewModel>? Reviews { get; set; }
