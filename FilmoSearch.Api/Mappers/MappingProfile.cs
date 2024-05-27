@@ -14,8 +14,14 @@ namespace FilmoSearch.Api.Mappers
             CreateMap<FilmViewModel, FilmModel>();
             CreateMap<FilmModel, FilmViewModel>();
 
+            CreateMap<GenreViewModel, GenreModel>();
+            CreateMap<GenreModel, GenreViewModel>();
+
             CreateMap<ReviewViewModel, ReviewModel>();
             CreateMap<ReviewModel, ReviewViewModel>();
+
+            CreateMap<UserViewModel, UserModel>();
+            CreateMap<UserModel, UserViewModel>();
         }
     }
 }
