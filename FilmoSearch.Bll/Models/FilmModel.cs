@@ -5,5 +5,13 @@
         public int Id { get; set; }
 
         public string Title { get; set; }
+
+        public IEnumerable<ReviewModel>? Reviews { get; set; }
+
+        public DateOnly PremiereDate { get; set; }
+
+        public IEnumerable<ActorModel>? Actors { get; set; }
+
+        public IEnumerable<GenreModel>? Genres { get; set; }
     }
 }
