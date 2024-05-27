@@ -3,16 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmoSearch.Api", "FilmoSearch.Api\FilmoSearch.Api.csproj", "{5C142EB7-45BB-4846-860D-C782F595D24B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmoSearch.Api", "FilmoSearch.Api\FilmoSearch.Api.csproj", "{5C142EB7-45BB-4846-860D-C782F595D24B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmoSearch.Bll", "FilmoSearch.Bll\FilmoSearch.Bll.csproj", "{346EB867-2552-42B8-85FB-2E369829F08E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmoSearch.Bll", "FilmoSearch.Bll\FilmoSearch.Bll.csproj", "{346EB867-2552-42B8-85FB-2E369829F08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmoSearch.Dal", "FilmoSearch.Dal\FilmoSearch.Dal.csproj", "{6BECD5A2-4B08-4B62-BC27-D6F7CBB0939B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmoSearch.Dal", "FilmoSearch.Dal\FilmoSearch.Dal.csproj", "{6BECD5A2-4B08-4B62-BC27-D6F7CBB0939B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{652E2244-E396-499D-8AE5-7CD30ABBCB66}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmoSearch.Tests", "FilmoSearch.Tests\FilmoSearch.Tests.csproj", "{6E63E3C6-626A-4A60-85CD-92691BB3A509}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{6BECD5A2-4B08-4B62-BC27-D6F7CBB0939B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BECD5A2-4B08-4B62-BC27-D6F7CBB0939B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BECD5A2-4B08-4B62-BC27-D6F7CBB0939B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E63E3C6-626A-4A60-85CD-92691BB3A509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E63E3C6-626A-4A60-85CD-92691BB3A509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E63E3C6-626A-4A60-85CD-92691BB3A509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E63E3C6-626A-4A60-85CD-92691BB3A509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
