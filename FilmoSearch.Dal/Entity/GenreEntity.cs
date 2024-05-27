@@ -2,18 +2,15 @@
 
 namespace FilmoSearch.Dal.Entity
 {
-    public class ActorEntity
+    public class GenreEntity
     {
         public int Id { get; set; }
 
         [Required]
-        public string FirstName { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public string LastName { get; set; }
-
-        [Required]
-        public DateOnly Birthday { get; set; }
+        public string Description { get; set; }
 
         public IEnumerable<FilmEntity>? Films { get; set; }
     }

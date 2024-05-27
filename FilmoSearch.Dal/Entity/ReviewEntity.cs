@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FilmoSearch.Dal.Entity
 {
@@ -14,5 +15,17 @@ namespace FilmoSearch.Dal.Entity
 
         [Required]
         public int Stars { get; set; }
+
+        [Required]
+        public int FilmId { get; set; }
+
+        [ForeignKey(nameof(FilmId))]
+        public FilmEntity? Film { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+
+        [ForeignKey(nameof(UserId))]
+        public UserEntity? User { get; set; }
     }
 }

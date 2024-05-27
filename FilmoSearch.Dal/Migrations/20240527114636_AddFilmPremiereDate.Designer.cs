@@ -3,6 +3,7 @@ using System;
 using FilmoSearch.Dal.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FilmoSearch.Dal.Migrations
 {
     [DbContext(typeof(FilmoContext))]
-    partial class FilmoContextModelSnapshot : ModelSnapshot
+    [Migration("20240527114636_AddFilmPremiereDate")]
+    partial class AddFilmPremiereDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,36 +24,6 @@ namespace FilmoSearch.Dal.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("ActorEntityFilmEntity", b =>
-                {
-                    b.Property<int>("ActorsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("FilmsId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ActorsId", "FilmsId");
-
-                    b.HasIndex("FilmsId");
-
-                    b.ToTable("ActorFilms", (string)null);
-                });
-
-            modelBuilder.Entity("FilmEntityGenreEntity", b =>
-                {
-                    b.Property<int>("FilmsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("GenresId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("FilmsId", "GenresId");
-
-                    b.HasIndex("GenresId");
-
-                    b.ToTable("FilmGenres", (string)null);
-                });
 
             modelBuilder.Entity("FilmoSearch.Dal.Entity.ActorEntity", b =>
                 {
@@ -184,36 +157,6 @@ namespace FilmoSearch.Dal.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("ActorEntityFilmEntity", b =>
-                {
-                    b.HasOne("FilmoSearch.Dal.Entity.ActorEntity", null)
-                        .WithMany()
-                        .HasForeignKey("ActorsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FilmoSearch.Dal.Entity.FilmEntity", null)
-                        .WithMany()
-                        .HasForeignKey("FilmsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("FilmEntityGenreEntity", b =>
-                {
-                    b.HasOne("FilmoSearch.Dal.Entity.FilmEntity", null)
-                        .WithMany()
-                        .HasForeignKey("FilmsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FilmoSearch.Dal.Entity.GenreEntity", null)
-                        .WithMany()
-                        .HasForeignKey("GenresId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("FilmoSearch.Dal.Entity.ReviewEntity", b =>

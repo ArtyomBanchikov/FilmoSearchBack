@@ -3,6 +3,7 @@ using System;
 using FilmoSearch.Dal.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FilmoSearch.Dal.Migrations
 {
     [DbContext(typeof(FilmoContext))]
-    partial class FilmoContextModelSnapshot : ModelSnapshot
+    [Migration("20240526205905_AddUsers")]
+    partial class AddUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,36 +25,6 @@ namespace FilmoSearch.Dal.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ActorEntityFilmEntity", b =>
-                {
-                    b.Property<int>("ActorsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("FilmsId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ActorsId", "FilmsId");
-
-                    b.HasIndex("FilmsId");
-
-                    b.ToTable("ActorFilms", (string)null);
-                });
-
-            modelBuilder.Entity("FilmEntityGenreEntity", b =>
-                {
-                    b.Property<int>("FilmsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("GenresId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("FilmsId", "GenresId");
-
-                    b.HasIndex("GenresId");
-
-                    b.ToTable("FilmGenres", (string)null);
-                });
-
             modelBuilder.Entity("FilmoSearch.Dal.Entity.ActorEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -59,9 +32,6 @@ namespace FilmoSearch.Dal.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateOnly>("Birthday")
-                        .HasColumnType("date");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -83,9 +53,6 @@ namespace FilmoSearch.Dal.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateOnly>("PremiereDate")
-                        .HasColumnType("date");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -129,9 +96,6 @@ namespace FilmoSearch.Dal.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("FilmId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("Stars")
                         .HasColumnType("integer");
 
@@ -139,14 +103,7 @@ namespace FilmoSearch.Dal.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("FilmId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Reviews", t =>
                         {
@@ -184,65 +141,6 @@ namespace FilmoSearch.Dal.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("ActorEntityFilmEntity", b =>
-                {
-                    b.HasOne("FilmoSearch.Dal.Entity.ActorEntity", null)
-                        .WithMany()
-                        .HasForeignKey("ActorsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FilmoSearch.Dal.Entity.FilmEntity", null)
-                        .WithMany()
-                        .HasForeignKey("FilmsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("FilmEntityGenreEntity", b =>
-                {
-                    b.HasOne("FilmoSearch.Dal.Entity.FilmEntity", null)
-                        .WithMany()
-                        .HasForeignKey("FilmsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FilmoSearch.Dal.Entity.GenreEntity", null)
-                        .WithMany()
-                        .HasForeignKey("GenresId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("FilmoSearch.Dal.Entity.ReviewEntity", b =>
-                {
-                    b.HasOne("FilmoSearch.Dal.Entity.FilmEntity", "Film")
-                        .WithMany("Reviews")
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FilmoSearch.Dal.Entity.UserEntity", "User")
-                        .WithMany("Reviews")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("FilmoSearch.Dal.Entity.FilmEntity", b =>
-                {
-                    b.Navigation("Reviews");
-                });
-
-            modelBuilder.Entity("FilmoSearch.Dal.Entity.UserEntity", b =>
-                {
-                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }
