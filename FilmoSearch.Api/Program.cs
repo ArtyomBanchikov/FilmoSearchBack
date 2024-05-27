@@ -1,3 +1,4 @@
+using FilmoSearch.Api.Middlewares;
 using FilmoSearch.Bll.DI;
 using Serilog;
 
@@ -27,6 +28,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.UseAuthorization();
 
