@@ -17,7 +17,9 @@ namespace FilmoSearch.Dal.DI
 
             services.AddScoped<IGenericRepository<ActorEntity>, ActorRepository>();
             services.AddScoped<IGenericRepository<FilmEntity>, FilmRepository>();
+            services.AddScoped<IGenericRepository<GenreEntity>, GenreRepository>();
             services.AddScoped<IGenericRepository<ReviewEntity>, ReviewRepository>();
+            services.AddScoped<IGenericRepository<UserEntity>, UserRepository>();
         }
     }
 }
