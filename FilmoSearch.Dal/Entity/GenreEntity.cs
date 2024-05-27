@@ -11,5 +11,7 @@ namespace FilmoSearch.Dal.Entity
 
         [Required]
         public string Description { get; set; }
+
+        public IEnumerable<FilmEntity>? Films { get; set; }
     }
 }

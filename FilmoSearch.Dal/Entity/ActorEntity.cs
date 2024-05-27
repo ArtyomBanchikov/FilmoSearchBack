@@ -14,5 +14,7 @@ namespace FilmoSearch.Dal.Entity
 
         [Required]
         public DateOnly Birthday { get; set; }
+
+        public IEnumerable<FilmEntity>? Films { get; set; }
     }
 }

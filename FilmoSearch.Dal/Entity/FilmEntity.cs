@@ -13,5 +13,9 @@ namespace FilmoSearch.Dal.Entity
 
         [Required]
         public DateOnly PremiereDate { get; set; }
+
+        public IEnumerable<ActorEntity>? Actors { get; set; }
+
+        public IEnumerable<GenreEntity>? Genres { get; set; }
     }
 }

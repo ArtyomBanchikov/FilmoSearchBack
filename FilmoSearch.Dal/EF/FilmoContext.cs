@@ -17,6 +17,16 @@ namespace FilmoSearch.Dal.EF
         {
             modelBuilder.Entity<ReviewEntity>()
                 .ToTable(t => t.HasCheckConstraint("ValidStars", "\"Stars\" > 0 AND \"Stars\" < 6"));
+
+            modelBuilder.Entity<ActorEntity>()
+                .HasMany(a => a.Films)
+                .WithMany(f => f.Actors)
+                .UsingEntity(j => j.ToTable("ActorFilms"));
+
+            modelBuilder.Entity<FilmEntity>()
+                .HasMany(f => f.Genres)
+                .WithMany(g => g.Films)
+                .UsingEntity(j => j.ToTable("FilmGenres"));
         }
     }
 }
