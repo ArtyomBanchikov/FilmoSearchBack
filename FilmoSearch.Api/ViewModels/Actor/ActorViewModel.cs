@@ -1,6 +1,8 @@
-﻿namespace FilmoSearch.Bll.Models
+﻿using FilmoSearch.Api.ViewModels.Film;
+
+namespace FilmoSearch.Api.ViewModels.Actor
 {
-    public class ActorModel
+    public class ActorViewModel
     {
         public int Id { get; set; }
 
@@ -10,6 +12,6 @@
 
         public DateOnly Birthday { get; set; }
 
-        public IEnumerable<FilmModel>? Films { get; set; }
+        public IEnumerable<FilmViewModel>? Films { get; set; }
     }
 }

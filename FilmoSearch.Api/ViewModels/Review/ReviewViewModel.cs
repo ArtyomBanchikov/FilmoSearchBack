@@ -1,6 +1,9 @@
-﻿namespace FilmoSearch.Bll.Models
+﻿using FilmoSearch.Api.ViewModels.Film;
+using FilmoSearch.Api.ViewModels.User;
+
+namespace FilmoSearch.Api.ViewModels.Review
 {
-    public class ReviewModel
+    public class ReviewViewModel
     {
         public int Id { get; set; }
 
@@ -12,10 +15,10 @@
 
         public int FilmId { get; set; }
 
-        public FilmModel? Film { get; set; }
+        public FilmViewModel? Film { get; set; }
 
         public int UserId { get; set; }
 
-        public UserModel? User { get; set; }
+        public UserViewModel? User { get; set; }
     }
 }
