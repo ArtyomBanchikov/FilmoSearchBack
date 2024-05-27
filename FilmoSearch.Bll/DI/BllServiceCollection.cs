@@ -13,7 +13,9 @@ namespace FilmoSearch.Bll.DI
         {
             services.AddScoped<IGenericService<ActorModel>, ActorService>();
             services.AddScoped<IGenericService<FilmModel>, FilmService>();
+            services.AddScoped<IGenericService<GenreModel>, GenreService>();
             services.AddScoped<IGenericService<ReviewModel>, ReviewService>();
+            services.AddScoped<IGenericService<UserModel>, UserService>();
 
             services.AddDalServices(configuration);
         }
