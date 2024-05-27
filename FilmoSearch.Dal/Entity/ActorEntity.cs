@@ -11,5 +11,8 @@ namespace FilmoSearch.Dal.Entity
 
         [Required]
         public string LastName { get; set; }
+
+        [Required]
+        public DateOnly Birthday { get; set; }
     }
 }
