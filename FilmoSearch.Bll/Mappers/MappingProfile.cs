@@ -14,8 +14,14 @@ namespace FilmoSearch.Bll.Mappers
             CreateMap<FilmEntity, FilmModel>();
             CreateMap<FilmModel, FilmEntity>();
 
+            CreateMap<GenreEntity, GenreModel>();
+            CreateMap<GenreModel, GenreEntity>();
+
             CreateMap<ReviewEntity, ReviewModel>();
             CreateMap<ReviewModel, ReviewEntity>();
+
+            CreateMap<UserEntity, UserModel>();
+            CreateMap<UserModel, UserEntity>();
         }
     }
 }
