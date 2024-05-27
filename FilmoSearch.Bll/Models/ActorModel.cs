@@ -1,6 +1,4 @@
-﻿using FilmoSearch.Dal.Entity;
-
-namespace FilmoSearch.Bll.Models
+﻿namespace FilmoSearch.Bll.Models
 {
     public class ActorModel
     {
@@ -12,6 +10,6 @@ namespace FilmoSearch.Bll.Models
 
         public DateOnly Birthday { get; set; }
 
-        public IEnumerable<FilmEntity>? Films { get; set; }
+        public IEnumerable<FilmModel>? Films { get; set; }
     }
 }
