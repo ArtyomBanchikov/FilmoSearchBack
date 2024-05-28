@@ -28,6 +28,9 @@ jobs:
             sleep 1
           done
           echo "Server is up!"
-
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0'
       - name: Run EF Core migrations
         run: docker-compose exec -T filmosearch dotnet ef database update
