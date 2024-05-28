@@ -28,3 +28,5 @@ jobs:
             sleep 1
           done
           echo "Server is up!"
+      - name: Run EF Core migrations
+        run: docker-compose exec app dotnet ef database update --project /src/FilmoSearch.Api/FilmoSearch.Api.csproj
