@@ -10,6 +10,25 @@ services:
       - filmodata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - filmonet
+    restart: unless-stopped
+
+  filmosearch:
+    image: filmosearch:v1
+    volumes:
+      - logs:/Logs
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - filmonet
+    depends_on:
+      postgres:
+        condition: "service_started"
+    restart: unless-stopped
+
+
 volumes:
   filmodata: 
       driver: local
@@ -17,3 +36,13 @@ volumes:
          o: bind
          type: none
          device: ./postgresql/data
+  logs:
+      driver: local
+      driver_opts:
+         o: bind
+         type: none
+         device: ./Logs
+
+networks:
+  filmonet:
+    driver: bridge
