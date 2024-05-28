@@ -30,4 +30,4 @@ jobs:
           echo "Server is up!"
 
       - name: Run EF Core migrations
-        run: docker-compose exec filmosearch dotnet ef database update
+        run: docker-compose exec -T filmosearch dotnet ef database update
