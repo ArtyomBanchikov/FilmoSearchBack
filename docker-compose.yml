@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
 
   filmosearch:
-    image: filmosearch:v1
+    image: filmosearch:latest
     volumes:
       - logs:/Logs
     ports:
