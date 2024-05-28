@@ -15,6 +15,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddBLLServices(builder.Configuration);
 
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
+
 builder.Services.AddAutoMapper(typeof(FilmoSearch.Api.Mappers.MappingProfile), typeof(FilmoSearch.Bll.Mappers.MappingProfile));
 
 var app = builder.Build();
