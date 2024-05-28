@@ -1,0 +1,34 @@
+name: Build and Run docker compose
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: filmosearch:latest
+
+      - name: Run Docker Compose
+        run: docker-compose up --build -d
+      - name: Wait for Server to be up
+        run: |
+          echo "Waiting for Server to be up..."
+          while ! nc -z localhost 5432; do
+            sleep 1
+          done
+          echo "Server is up!"
+
+      - name: Run EF Core migrations
+        run: docker-compose exec filmosearch dotnet ef database update
