@@ -2,8 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
-RUN dotnet tool install --global dotnet-ef --version 7.0.18
-ENV PATH="${PATH}:/root/.dotnet/tools"
+
 EXPOSE 80
 EXPOSE 443
 
@@ -20,5 +19,7 @@ RUN dotnet publish "FilmoSearch.Api.csproj" -c Release -o /app/publish /p:UseApp
 
 FROM base AS final
 WORKDIR /app
+RUN dotnet tool install --global dotnet-ef --version 7.0.18
+ENV PATH="${PATH}:/root/.dotnet/tools"
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "FilmoSearch.Api.dll"]
