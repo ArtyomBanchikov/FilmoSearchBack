@@ -35,13 +35,13 @@ volumes:
       driver_opts:
          o: bind
          type: none
-         device: ./postgresql/data
+         device: ${GITHUB_WORKSPACE}/postgresql/data
   logs:
       driver: local
       driver_opts:
          o: bind
          type: none
-         device: ./Logs
+         device: ${GITHUB_WORKSPACE}/Logs
 
 networks:
   filmonet:
