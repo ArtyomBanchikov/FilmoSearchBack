@@ -90,7 +90,7 @@ namespace FilmoSearch.Tests.Tests.Film
         public async Task UpdateFilmNonExisted_Fails()
         {
             //Arrange
-            var filmModel = new FilmModel { Id = 4, PremiereDate = new DateOnly(1991, 1, 1), Title = "UpdateFilmTestTitle" };
+            var filmModel = new FilmModel { Id = 4, PremiereDate = new DateOnly(1991, 1, 1), Title = "UpdateFilmTestTitle", Description = "UpdateFilmDescription" };
             _filmRepository.Setup(repo => repo.UpdateAsync(It.IsAny<FilmEntity>(), new CancellationToken())).Throws(new DbUpdateConcurrencyException());
 
             //Act and assert
@@ -101,7 +101,7 @@ namespace FilmoSearch.Tests.Tests.Film
         public async Task CreateFilmNonExisted_Success()
         {
             //Arrange
-            var filmModel = new FilmModel { Id = 4, PremiereDate = new DateOnly(1991, 1, 1), Title = "UpdateFilmTestTitle" };
+            var filmModel = new FilmModel { Id = 4, PremiereDate = new DateOnly(1991, 1, 1), Title = "UpdateFilmTestTitle", Description = "CreateFilmDescription" };
 
             //Act
             var result = await _filmService.CreateAsync(filmModel, new CancellationToken());

@@ -78,7 +78,7 @@ namespace FilmoSearch.Tests.Tests.Film
         public async Task UpdateFilmExisted_Succes()
         {
             var filmId = 1;
-            var updateFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "UpdateFilmTestTitle"};
+            var updateFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "UpdateFilmTestTitle", Description = "UpdateFilmDescription" };
             var film = TestData.GetFilmEntities().First();
             var context = FilmoContextFactory.Create("FilmTestDb");
             context.Films.Add(film);
@@ -99,7 +99,7 @@ namespace FilmoSearch.Tests.Tests.Film
         {
             //Arrange
             var filmId = 4;
-            var updateFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "UpdateFilmTestTitle" };
+            var updateFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "UpdateFilmTestTitle", Description = "UpdateFilmDescription" };
             var film = TestData.GetFilmEntities().First();
             var context = FilmoContextFactory.Create("FilmTestDb");
             context.Films.Add(film);
@@ -115,7 +115,7 @@ namespace FilmoSearch.Tests.Tests.Film
         public async Task CreateFilmNonExisted_Succes()
         {
             var filmId = 4;
-            var createFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "CreateFilmTestTitle" };
+            var createFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "CreateFilmTestTitle", Description = "CreateFilmDescription" };
             var films = TestData.GetFilmEntities();
             var context = FilmoContextFactory.Create("FilmTestDb");
             context.Films.AddRange(films);
@@ -135,7 +135,7 @@ namespace FilmoSearch.Tests.Tests.Film
         {
             //Arrange
             var filmId = 1;
-            var createFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "CreateFilmTestTitle" };
+            var createFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "CreateFilmTestTitle", Description = "CreateFilmDescription" };
             var film = TestData.GetFilmEntities().First();
             var context = FilmoContextFactory.Create("FilmTestDb");
             context.Films.Add(film);
@@ -152,7 +152,7 @@ namespace FilmoSearch.Tests.Tests.Film
         public void DeleteFilmExisted_Succes()
         {
             var filmId = 1;
-            var deleteFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "DeleteFilmTestTitle" };
+            var deleteFilm = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "DeleteFilmTestTitle", Description = "DeleteFilmDescription" };
             var film = TestData.GetFilmEntities().First();
             var context = FilmoContextFactory.Create("FilmTestDb");
             context.Films.Add(film);
@@ -173,7 +173,7 @@ namespace FilmoSearch.Tests.Tests.Film
         {
             //Arrange
             var filmId = 4;
-            var film = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "DeleteFilmTestTitle" };
+            var film = new FilmEntity { Id = filmId, PremiereDate = new DateOnly(2020, 1, 1), Title = "DeleteFilmTestTitle", Description = "DeleteFilmDescription" };
             var films = TestData.GetFilmEntities();
             var context = FilmoContextFactory.Create("FilmTestDb");
             context.Films.AddRange(films);

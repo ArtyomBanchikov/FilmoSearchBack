@@ -12,6 +12,8 @@ namespace FilmoSearch.Api.ViewModels.Film
 
         public DateOnly PremiereDate { get; set; }
 
+        public string Description { get; set; }
+
         public IEnumerable<ActorViewModel>? Actors { get; set; }
 
         public IEnumerable<GenreViewModel>? Genres { get; set; }
