@@ -1,5 +1,6 @@
+name: Testing at merge into main
 on:
-  push:
+  merge_group:
     branches:
       - main
 
