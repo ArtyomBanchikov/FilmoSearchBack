@@ -2,7 +2,7 @@ name: Testing at merge into main
 on:
   merge_group:
     branches:
-      - main
+      - master
 
 jobs:
   tests:
