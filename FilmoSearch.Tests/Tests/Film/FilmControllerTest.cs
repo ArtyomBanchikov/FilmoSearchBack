@@ -98,7 +98,7 @@ namespace FilmoSearch.Tests.Tests.Film
         public async Task UpdateFilmNonExisted_Fails()
         {
             //Arrange
-            var filmViewModel = new FilmViewModel { Id = 4, PremiereDate = new DateOnly(2022, 1, 1), Title = "UpdateFilmTestTitle" };
+            var filmViewModel = new FilmViewModel { Id = 4, PremiereDate = new DateOnly(2022, 1, 1), Title = "UpdateFilmTestTitle", Description = "UpdateFilmDescription" };
             _filmService.Setup(service => service.UpdateAsync(It.IsAny<FilmModel>(), new CancellationToken())).Throws(new DbUpdateConcurrencyException());
 
             //Act and assert
@@ -109,7 +109,7 @@ namespace FilmoSearch.Tests.Tests.Film
         public async Task CreateFilm_Success()
         {
             //Arrange
-            var addFilmViewModel = new AddFilmViewModel { PremiereDate = new DateOnly(2022, 1, 1), Title = "CreateFilmTestTitle" };
+            var addFilmViewModel = new AddFilmViewModel { PremiereDate = new DateOnly(2022, 1, 1), Title = "CreateFilmTestTitle", Description = "CreateFilmDescription" };
 
             //Act
             var result = await _filmController.CreateAsync(addFilmViewModel, new CancellationToken());
