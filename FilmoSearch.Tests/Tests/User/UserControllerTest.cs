@@ -103,7 +103,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Id = 4,
                 Name = "UpgradeUserTestName",
                 Lastname = "UpgradeUserTestLastname",
-                Email = "UpgradeUserTestEmail",
+                Email = "UpgradeUserTest@gmail.com",
                 Password = "UpgradeUserTestPassword",
                 RegistrationDate = new DateOnly(2024, 1, 1)
             };
@@ -121,7 +121,7 @@ namespace FilmoSearch.Tests.Tests.User
             {
                 Name = "UpgradeUserTestName",
                 Lastname = "UpgradeUserTestLastname",
-                Email = "UpgradeUserTestEmail",
+                Email = "UpgradeUserTest@gmail.com",
                 Password = "UpgradeUserTestPassword"
             };
 
