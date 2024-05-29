@@ -14,8 +14,6 @@ COPY . .
 WORKDIR "/src/FilmoSearch.Api"
 RUN dotnet build "FilmoSearch.Api.csproj" -c Release -o /app/build
 
-
-
 FROM build AS final
 WORKDIR /app
 COPY --from=build  /app/build  .
