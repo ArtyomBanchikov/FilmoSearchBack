@@ -36,19 +36,22 @@ namespace FilmoSearch.Tests.Data
             {
                 Id = 1,
                 Title = "TestFilmTitle1",
-                PremiereDate = new DateOnly(2021, 1, 1)
+                PremiereDate = new DateOnly(2021, 1, 1),
+                Description = "TestFilmDescription1"
             };
             FilmEntity film2 = new FilmEntity
             {
                 Id = 2,
                 Title = "TestFilmTitle2",
-                PremiereDate = new DateOnly(2022, 2, 2)
+                PremiereDate = new DateOnly(2022, 2, 2),
+                Description = "TestFilmDescription2"
             };
             FilmEntity film3 = new FilmEntity
             {
                 Id = 3,
                 Title = "TestFilmTitle3",
-                PremiereDate = new DateOnly(2023, 3, 3)
+                PremiereDate = new DateOnly(2023, 3, 3),
+                Description = "TestFilmDescription3"
             };
 
             return new List<FilmEntity> { film1, film2, film3 };
