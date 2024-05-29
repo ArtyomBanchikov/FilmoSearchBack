@@ -10,6 +10,8 @@
 
         public DateOnly PremiereDate { get; set; }
 
+        public string Description { get; set; }
+
         public IEnumerable<ActorModel>? Actors { get; set; }
 
         public IEnumerable<GenreModel>? Genres { get; set; }
