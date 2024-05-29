@@ -12,7 +12,7 @@ namespace FilmoSearch.Dal.Entity
         [Required]
         public string Lastname { get; set; }
 
-        [Required]
+        [Required, EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
 
         [Required]
