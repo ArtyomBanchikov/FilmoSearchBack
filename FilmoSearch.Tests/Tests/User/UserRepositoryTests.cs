@@ -76,7 +76,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "UpdateUserTestName",
                 Lastname = "UpdateUserTestLastname",
                 Password = "UpdateTestUserTestPassword",
-                Email = "UpdateTestUserEmail"
+                Email = "UpdateTestUser@gmail.com"
             };
             var user = TestData.GetUserEntities().First();
             var context = FilmoContextFactory.Create("UserTestDb");
@@ -105,7 +105,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "UpdateUserTestName",
                 Lastname = "UpdateUserTestLastname",
                 Password = "UpdateTestUserTestPassword",
-                Email = "UpdateTestUserEmail"
+                Email = "UpdateTestUser@gmail.com"
             };
             var user = TestData.GetUserEntities().First();
             var context = FilmoContextFactory.Create("UserTestDb");
@@ -129,7 +129,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "CreateUserTestName",
                 Lastname = "CreateUserTestLastname",
                 Password = "CreateTestUserTestPassword",
-                Email = "CreateTestUserEmail"
+                Email = "CreateTestUser@gmail.com"
             };
             var users = TestData.GetUserEntities();
             var context = FilmoContextFactory.Create("UserTestDb");
@@ -157,7 +157,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "CreateUserTestName",
                 Lastname = "CreateUserTestLastname",
                 Password = "CreateTestUserTestPassword",
-                Email = "CreateTestUserEmail"
+                Email = "CreateTestUser@gmail.com"
             };
             var user = TestData.GetUserEntities().First();
             var context = FilmoContextFactory.Create("UserTestDb");
@@ -182,7 +182,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "DeleteUserTestName",
                 Lastname = "DeleteUserTestLastname",
                 Password = "DeleteTestUserTestPassword",
-                Email = "DeleteTestUserEmail"
+                Email = "DeleteTestUser@gmail.com"
             };
             var user = TestData.GetUserEntities().First();
             var context = FilmoContextFactory.Create("UserTestDb");
@@ -211,7 +211,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "DeleteUserTestName",
                 Lastname = "DeleteUserTestLastname",
                 Password = "DeleteTestUserTestPassword",
-                Email = "DeleteTestUserEmail"
+                Email = "DeleteTestUser@gmail.com"
             };
             var users = TestData.GetUserEntities();
             var context = FilmoContextFactory.Create("UserTestDb");

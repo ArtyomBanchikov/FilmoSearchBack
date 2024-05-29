@@ -96,7 +96,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "UpdateUserTestName",
                 Lastname = "UpdateUserTestLastname",
                 Password = "UpdateUserTestPassword",
-                Email = "UpdateUserTestEmail",
+                Email = "UpdateUserTest@gmail.com",
                 RegistrationDate = new DateOnly(2021, 4, 4)
             };
             _userRepository.Setup(repo => repo.UpdateAsync(It.IsAny<UserEntity>(), new CancellationToken())).Throws(new DbUpdateConcurrencyException());
@@ -115,7 +115,7 @@ namespace FilmoSearch.Tests.Tests.User
                 Name = "CreateUserTestName",
                 Lastname = "CreateUserTestLastname",
                 Password = "CreateUserTestPassword",
-                Email = "CreateUserTestEmail",
+                Email = "CreateUserTest@gmail.com",
                 RegistrationDate = new DateOnly(2021, 4, 4)
             };
 
