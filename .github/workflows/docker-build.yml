@@ -3,7 +3,6 @@ on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -11,8 +10,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
@@ -29,6 +28,5 @@ jobs:
             sleep 1
           done
           echo "Server is up!"
-
       - name: Run EF Core migrations
-        run: docker-compose exec filmosearch dotnet ef database update
+        run: docker-compose exec -T filmosearch dotnet ef database update --project /src/FilmoSearch.Api/FilmoSearch.Api.csproj
